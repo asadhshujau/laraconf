@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\Region;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Venue;
@@ -21,10 +22,11 @@ class VenueFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->address(),
             'city' => $this->faker->city(),
             'country' => $this->faker->country(),
             'postal_code' => $this->faker->postcode(),
+            'region' => $this->faker->randomElement(Region::class),
         ];
     }
 }

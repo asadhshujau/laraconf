@@ -6,7 +6,7 @@ models:
     end_date: datetime
     status: string
     region: string
-    venue_id: unsignedBigInteger
+    venue_id: unsignedBigInteger nullable
     relationships:
       belongsTo: Venue
       belongsToMany: Speaker, Talk
